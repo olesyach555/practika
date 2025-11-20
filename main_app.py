@@ -248,6 +248,31 @@ class SuppliersDialog(QDialog):
 def main():
     app = QApplication(sys.argv)
 
+    app.setStyleSheet("""
+        QWidget {
+            font-family: 'Comic Sans MS';
+            background-color: #FFFFFF;
+        }
+        QMainWindow {
+            background-color: #ABCFCE;
+        }
+        QDialog {
+            background-color: #ABCFCE;
+        }
+        QPushButton {
+            background-color: #546F94;
+            color: white;
+            border-radius: 5px;
+            padding: 5px;
+        }
+        QLineEdit, QComboBox, QTableView {
+            background-color: #FFFFFF;
+        }
+        QLabel {
+            background-color: #ABCFCE;
+        }
+    """)
+
     db = QSqlDatabase.addDatabase('QSQLITE')
     db.setDatabaseName('materials.db')
     if not db.open():
